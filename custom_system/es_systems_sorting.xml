@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<systemList>
+    <!-- 手机 -->
+    <system>
+        <name>androidapps</name>
+        <systemsortname>00-001</systemsortname>
+    </system> 
+    <system>
+        <name>androidgames</name>
+        <systemsortname>00-002</systemsortname>
+    </system>
+    <system>
+        <name>emulators</name>
+        <systemsortname>00-003</systemsortname>
+    </system>
+    <system>
+        <name>j2me</name>
+        <systemsortname>00-004</systemsortname>
+    </system>
+    <system>
+        <name>symbian</name>
+        <systemsortname>00-005</systemsortname>
+    </system>
+    <!-- 任天堂家用机 -->
+    <system>
+        <name>nes</name>
+        <systemsortname>01-001</systemsortname>
+    </system>
+    <system>
+        <name>snes</name>
+        <systemsortname>01-002</systemsortname>
+    </system>
+    <system>
+        <name>virtualboy</name>
+        <systemsortname>01-003</systemsortname>
+    </system>
+    <system>
+        <name>n64</name>
+        <systemsortname>01-004</systemsortname>
+    </system>
+    <system>
+        <name>gc</name>
+        <systemsortname>01-005</systemsortname>
+    </system>
+    <system>
+        <name>wii</name>
+        <systemsortname>01-006</systemsortname>
+    </system>
+    <system>
+        <name>wiiu</name>
+        <systemsortname>01-007</systemsortname>
+    </system>
+    <system>
+        <name>switch</name>
+        <systemsortname>01-008</systemsortname>
+    </system>
+    <!-- 任天堂掌机 -->
+    <system>
+        <name>gameandwatch</name>
+        <systemsortname>02-001</systemsortname>
+    </system>
+    <system>
+        <name>gb</name>
+        <systemsortname>02-002</systemsortname>
+    </system>
+    <system>
+        <name>gbc</name>
+        <systemsortname>02-003</systemsortname>
+    </system>
+    <system>
+        <name>pokemini</name>
+        <systemsortname>02-004</systemsortname>
+    </system>
+    <system>
+        <name>gba</name>
+        <systemsortname>02-005</systemsortname>
+    </system>
+    <system>
+        <name>nds</name>
+        <systemsortname>02-006</systemsortname>
+    </system>
+    <system>
+        <name>n3ds</name>
+        <systemsortname>02-007</systemsortname>
+    </system>
+
+    <!-- 索尼家用机掌机 -->
+    <system>
+        <name>psx</name>
+        <systemsortname>03-001</systemsortname>
+    </system>
+    <system>
+        <name>ps2</name>
+        <systemsortname>03-002</systemsortname>
+    </system>
+    <system>
+        <name>psp</name>
+        <systemsortname>03-011</systemsortname>
+    </system>
+    <system>
+        <name>psvita</name>
+        <systemsortname>03-012</systemsortname>
+    </system>
+    <system>
+        <name>psm</name>
+        <systemsortname>03-013</systemsortname>
+    </system>
+
+    <!-- 世嘉主机 -->
+	<system>
+        <name>megadrive</name>
+        <systemsortname>04-001</systemsortname>
+    </system>
+    <system>
+        <name>sega32x</name>
+        <systemsortname>04-002</systemsortname>
+    </system>
+    <system>
+        <name>saturn</name>
+        <systemsortname>04-003</systemsortname>
+    </system>
+    <system>
+        <name>saturnjp</name>
+        <systemsortname>04-004</systemsortname>
+    </system>
+    <system>
+        <name>dreamcast</name>
+        <systemsortname>04-005</systemsortname>
+    </system>
+
+	<!-- 街机 -->
+    <system>
+        <name>mame</name>
+        <systemsortname>05-001</systemsortname>
+    </system>
+    <system>
+        <name>fbneo</name>
+        <systemsortname>05-002</systemsortname>
+    </system>
+	<system>
+        <name>cps1</name>
+        <systemsortname>05-003</systemsortname>
+    </system>
+    <system>
+        <name>cps2</name>
+        <systemsortname>05-004</systemsortname>
+    </system>
+    <system>
+        <name>cps3</name>
+        <systemsortname>05-005</systemsortname>
+    </system>
+	<system>
+        <name>neogeo</name>
+        <systemsortname>05-006</systemsortname>
+    </system>
+	<system>
+        <name>naomi</name>
+        <systemsortname>05-007</systemsortname>
+    </system>
+
+    <!-- 其他家用机 -->
+    <system>
+        <name>3do</name>
+        <systemsortname>06-001</systemsortname>
+    </system>
+    <system>
+        <name>cdimono1</name>
+        <systemsortname>06-002</systemsortname>
+    </system>
+    <system>
+        <name>pcengine</name>
+        <systemsortname>06-003</systemsortname>
+    </system>
+    <system>
+        <name>atari7800</name>
+        <systemsortname>06-004</systemsortname>
+    </system>
+    <system>
+        <name>vectrex</name>
+        <systemsortname>06-005</systemsortname>
+    </system>
+
+    <!-- 其他掌机 -->
+    <system>
+        <name>wonderswancolor</name>
+        <systemsortname>07-001</systemsortname>
+    </system>
+    <system>
+        <name>ngpc</name>
+        <systemsortname>07-002</systemsortname>
+    </system>
+    <system>
+        <name>supervision</name>
+        <systemsortname>07-003</systemsortname>
+    </system>
+
+    <!-- 其他PC -->
+    <system>
+        <name>scummvm</name>
+        <systemsortname>08-001</systemsortname>
+    </system>
+    <system>
+        <name>msx</name>
+        <systemsortname>08-002</systemsortname>
+    </system>
+    <system>
+        <name>pc98</name>
+        <systemsortname>08-003</systemsortname>
+    </system>
+    <system>
+        <name>zxspectrum</name>
+        <systemsortname>08-003</systemsortname>
+    </system>
+    <system>
+        <name>dos</name>
+        <systemsortname>08-004</systemsortname>
+    </system>
+
+    <!-- 游戏引擎 -->
+    <system>
+        <name>flash</name>
+        <systemsortname>09-001</systemsortname>
+    </system>
+    <system>
+        <name>solarus</name>
+        <systemsortname>09-002</systemsortname>
+    </system>
+    <system>
+        <name>openbor</name>
+        <systemsortname>09-003</systemsortname>
+    </system>
+    <system>
+        <name>mugen</name>
+        <systemsortname>09-004</systemsortname>
+    </system>
+	<system>
+        <name>easyrpg</name>
+        <systemsortname>09-005</systemsortname>
+    </system>
+
+    <system>
+        <name>arduboy</name>
+        <systemsortname>09-021</systemsortname>
+    </system>
+	<system>
+        <name>pico8</name>
+        <systemsortname>09-022</systemsortname>
+    </system>
+    <system>
+        <name>tic80</name>
+        <systemsortname>09-023</systemsortname>
+    </system>
+    <system>
+        <name>wasm4</name>
+        <systemsortname>09-024</systemsortname>
+    </system>
+
+    <system>
+        <name>lutro</name>
+        <systemsortname>09-031</systemsortname>
+    </system>
+    <system>
+        <name>love</name>
+        <systemsortname>09-032</systemsortname>
+    </system>
+
+
+    <!-- 中国游戏机 -->
+    <!-- 梦龙 -->
+    <system>
+        <name>mononcol</name>
+        <systemsortname>10-001</systemsortname>
+    </system>
+    <!-- 丁果 -->
+    <system>
+        <name>dingoo</name>
+        <systemsortname>10-002</systemsortname>
+    </system>
+    <!-- 步步高 -->
+    <system>
+        <name>bbk</name>
+        <systemsortname>10-011</systemsortname>
+    </system>
+    <!-- 文曲星 -->
+    <system>
+        <name>lava</name>
+        <systemsortname>10-012</systemsortname>
+    </system>
+
+
+</systemList>

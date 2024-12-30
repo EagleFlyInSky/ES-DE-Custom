@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!-- This is the ES-DE find rules configuration file for Android -->
+<ruleList>
+    <emulator name="PPSSPP">
+        <!-- Sony PlayStation Portable emulator PPSSPP -->
+        <rule type="androidpackage">
+            <entry>org.ppsspp.ppsspp/.PpssppActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="PPSSPP-GOLD">
+        <!-- Sony PlayStation Portable emulator PPSSPP -->
+        <rule type="androidpackage">
+            <entry>org.ppsspp.ppssppgold/org.ppsspp.ppsspp.PpssppActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="OPENBOR">
+        <!-- OpenBOR Game Engine -->
+        <rule type="androidpackage">
+            <entry>org.openbor.engine/.GameActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="OPENBOR-PLUS-526">
+        <!-- OpenBOR Game Engine -->
+        <rule type="androidpackage">
+            <entry>org.openbor526.engine/org.openbor.engine.GameActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="OPENBOR-PLUS-413">
+        <!-- OpenBOR Game Engine -->
+        <rule type="androidpackage">
+            <entry>org.openbor413.engine/org.openbor.engine.GameActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="OPENBOR-PLUS-262">
+        <!-- OpenBOR Game Engine -->
+        <rule type="androidpackage">
+            <entry>org.openbor262.engine/org.libsdl.app.SDLActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="OPENBOR-FFLNS">
+        <!-- OpenBOR Game Engine -->
+        <rule type="androidpackage">
+            <entry>org.openborfflns.engine/org.libsdl.app.SDLActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="YUZU">
+        <!-- switch emulator YUZU -->
+        <rule type="androidpackage">
+            <entry>org.yuzu.yuzu_emu/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="YUZU+">
+        <!-- switch emulator YUZU+ -->
+        <rule type="androidpackage">
+            <entry>org.yuzu.yuzu_plus/org.yuzu.yuzu_plus.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="SUYU">
+        <!-- switch emulator SUYU -->
+        <rule type="androidpackage">
+            <entry>org.suyu.suyu_emu/org.suyu.suyu_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="SUDACHI">
+        <!-- switch emulator SUDACHI -->
+        <rule type="androidpackage">
+            <entry>org.sudachi.sudachi_emu.ea/org.sudachi.sudachi_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="ZINUX">
+        <!-- switch emulator Zinux -->
+        <rule type="androidpackage">
+            <entry>org.Ziunx.Ziunx_emu.ea/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="UZUY">
+        <!-- switch emulator uzuy -->
+        <rule type="androidpackage">
+            <entry>org.uzuy.uzuy_emu/org.uzuy.uzuy_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="CITRON">
+        <!-- switch emulator uzuy -->
+        <rule type="androidpackage">
+            <entry>org.citron.citron_emu/org.citron.citron_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="SOLARUS">
+        <!-- solarus emulator Solarus Launcher -->
+        <rule type="androidpackage">
+            <entry>org.solarus_games.solarus/.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="LOVE2D">
+        <!-- LOVE2D emulator LoveLoader -->
+        <rule type="androidpackage">
+            <entry>org.love2d.android/org.love2d.android.GameActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="JL-MOD-CONFIG">
+        <!-- j2me emulator JL-MOD -->
+        <rule type="androidpackage">
+            <entry>ru.woesss.j2meloader/ru.playsoftware.j2meloader.config.ConfigActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="JOIPLAY">
+        <!-- rpgmaker emulator JOIPLAY -->
+        <rule type="androidpackage">
+            <entry>cyou.joiplay.joiplay/.activities.ShortcutActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="MALDIVES">
+        <!-- rpgmaker emulator MALDVES -->
+        <rule type="androidpackage">
+            <entry>net.miririt.maldivesplayer/net.miririt.maldives.RMMVActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="MINE">
+        <!-- ons emulator MINE -->
+        <rule type="androidpackage">
+            <entry>cn.natdon.onscripterv2/cn.natdon.onscripterv2.start</entry>
+        </rule>
+    </emulator>
+    <emulator name="TYRANOR">
+        <!-- emulator Tyranor -->
+        <rule type="androidpackage">
+            <entry>com.akira.tyranoemu/com.akira.tyranoemu.app.TyActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="WINLATOR-WB64">
+        <rule type="androidpackage">
+            <entry>com.eagle.es_tools/com.eagle.es_tools.stater.WinlatorWB64StaterActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="PLAYSTATION-MOBILE">
+        <rule type="androidpackage">
+            <entry>com.playstation.psstore/com.playstation.psstore.ui.start.StartPsmContentBridgeActivity</entry>
+        </rule>
+    </emulator>
+    
+</ruleList>
