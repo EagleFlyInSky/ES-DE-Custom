@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <systemList>
+    <system>
+        <name>windows</name>
+        <systemsortname>00-000</systemsortname>
+    </system>
     <!-- 手机 -->
     <system>
         <name>androidapps</name>
@@ -260,12 +264,16 @@
         <systemsortname>09-031</systemsortname>
     </system>
     <system>
-        <name>love</name>
+        <name>love2d</name>
         <systemsortname>09-032</systemsortname>
     </system>
 
 
     <!-- 中国游戏机 -->
+     <system>
+        <name>mess</name>
+        <systemsortname>10-000</systemsortname>
+    </system>
     <!-- 梦龙 -->
     <system>
         <name>mononcol</name>
@@ -285,6 +293,25 @@
     <system>
         <name>lava</name>
         <systemsortname>10-012</systemsortname>
+    </system>
+
+
+    <!--  GalGame  -->
+    <system>
+        <name>ons</name>
+        <systemsortname>11-001</systemsortname>
+    </system>
+    <system>
+        <name>krkr</name>
+        <systemsortname>11-002</systemsortname>
+    </system>
+    <system>
+        <name>tyranor</name>
+        <systemsortname>11-003</systemsortname>
+    </system>
+    <system>
+        <name>artemis</name>
+        <systemsortname>11-004</systemsortname>
     </system>
 
 

@@ -19,6 +19,18 @@
             <entry>org.openbor.engine/.GameActivity</entry>
         </rule>
     </emulator>
+    <emulator name="OPENBOR-7533">
+        <!-- OpenBOR Game Engine -->
+        <rule type="androidpackage">
+            <entry>org.openbor7533.engine/org.openbor.engine.GameActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="OPENBOR-6391">
+        <!-- OpenBOR Game Engine -->
+        <rule type="androidpackage">
+            <entry>org.openbor6391.engine/org.libsdl.app.SDLActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="OPENBOR-PLUS-526">
         <!-- OpenBOR Game Engine -->
         <rule type="androidpackage">
@@ -64,6 +76,7 @@
     <emulator name="SUDACHI">
         <!-- switch emulator SUDACHI -->
         <rule type="androidpackage">
+            <entry>org.sudachi.sudachi_emu/org.sudachi.sudachi_emu.activities.EmulationActivity</entry>
             <entry>org.sudachi.sudachi_emu.ea/org.sudachi.sudachi_emu.activities.EmulationActivity</entry>
         </rule>
     </emulator>
@@ -106,13 +119,19 @@
     <emulator name="JOIPLAY">
         <!-- rpgmaker emulator JOIPLAY -->
         <rule type="androidpackage">
-            <entry>cyou.joiplay.joiplay/.activities.ShortcutActivity</entry>
+            <entry>cyou.joiplay.joiplay/cyou.joiplay.joiplay.activities.SplashActivity</entry>
         </rule>
     </emulator>
     <emulator name="MALDIVES">
         <!-- rpgmaker emulator MALDVES -->
         <rule type="androidpackage">
-            <entry>net.miririt.maldivesplayer/net.miririt.maldives.RMMVActivity</entry>
+            <entry>net.miririt.maldivesplayer/net.miririt.maldives.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="AOPAOP">
+        <!-- rpgmaker emulator AOPAOP -->
+        <rule type="androidpackage">
+            <entry>com.aopaop.app/com.aopaop.app.module.common.SplashActivity</entry>
         </rule>
     </emulator>
     <emulator name="MINE">
@@ -123,18 +142,59 @@
     </emulator>
     <emulator name="TYRANOR">
         <!-- emulator Tyranor -->
-        <rule type="androidpackage">
+        <rule type="androidpackage">*
             <entry>com.akira.tyranoemu/com.akira.tyranoemu.app.TyActivity</entry>
-        </rule>
-    </emulator>
-    <emulator name="WINLATOR-WB64">
-        <rule type="androidpackage">
-            <entry>com.eagle.es_tools/com.eagle.es_tools.stater.WinlatorWB64StaterActivity</entry>
         </rule>
     </emulator>
     <emulator name="PLAYSTATION-MOBILE">
         <rule type="androidpackage">
             <entry>com.playstation.psstore/com.playstation.psstore.ui.start.StartPsmContentBridgeActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="MOONLIGHT">
+        <rule type="androidpackage">
+            <entry>com.limelight/com.limelight.ShortcutTrampoline</entry>
+        </rule>
+    </emulator>
+    <emulator name="MOONLIGHT-DEBUG">
+        <rule type="androidpackage">
+            <entry>com.limelight.debug/com.limelight.ShortcutTrampoline</entry>
+        </rule>
+    </emulator>
+    <!-- 原版包名 -->
+    <emulator name="WINLATOR">
+        <rule type="androidpackage">
+            <entry>com.winlator/com.winlator.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="WINLATOR-WB64">
+        <rule type="androidpackage">
+            <entry>com.WineBox64/com.winlator.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="WINLATOR-WB64-855">
+        <rule type="androidpackage">
+            <entry>com.wb64/com.winlator.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="WINLATOR-A">
+        <rule type="androidpackage">
+            <entry>com.winlatorA/com.winlator.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="WINLATOR-B">
+        <rule type="androidpackage">
+            <entry>com.winlatorB/com.winlator.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="WINLATOR-ANTUTU">
+        <rule type="androidpackage">
+            <entry>com.antutu.ABenchMark/com.winlator.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="GAME-DREAM-FACTORY">
+        <rule type="androidpackage">
+            <entry>com.GameDreamFactoryAndroid/com.GameDreamFactoryAndroid.activities.MainActivity</entry>
         </rule>
     </emulator>
     
