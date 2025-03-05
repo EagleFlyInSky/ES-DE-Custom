@@ -33,7 +33,6 @@
         <path>%ROMPATH%/psp</path>
         <extension>.chd .CHD .cso .CSO .elf .ELF .iso .ISO .pbp .PBP .prx .PRX .7z .7Z .zip .ZIP</extension>
         <command label="PPSSPP (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %DATA%=%ROMSAF%</command>
-        <!-- 暂时官方es不支持，需要es-de添加EmulatorPlus模块 -->
         <command label="PPSSPP OpenGL (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/opengl.ini %ROMSAF%"</command>
         <command label="PPSSPP Vulkan (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/vulkan.ini %ROMSAF%"</command>
         <command label="PPSSPP-GOLD (Standalone)">%EMULATOR_PPSSPP-GOLD% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %DATA%=%ROMSAF%</command>
@@ -80,8 +79,8 @@
         <fullname>OpenBOR Game Engine</fullname>
         <path>%ROMPATH%/openbor</path>
         <extension>.pak</extension>
-        <command label="OPENBOR-7533 (Standalone)">%EMULATOR_OPENBOR-7533% %DATA%=%ROM%</command>
         <command label="OPENBOR-6391 (Standalone)">%EMULATOR_OPENBOR-6391% %DATA%=%ROM%</command>
+        <command label="OPENBOR-7533 (Standalone)">%EMULATOR_OPENBOR-7533% %DATA%=%ROM%</command>
         <command label="OPENBOR-PLUS-526 (Standalone)">%EMULATOR_OPENBOR-PLUS-526% %DATA%=%ROM%</command>
         <command label="OPENBOR-PLUS-413 (Standalone)">%EMULATOR_OPENBOR-PLUS-413% %DATA%=%ROM%</command>
         <command label="OPENBOR-PLUS-262 (Standalone)">%EMULATOR_OPENBOR-PLUS-262% %DATA%=%ROM%</command>
@@ -112,6 +111,18 @@
         <platform>mess</platform>
         <theme>mess</theme>
     </system>
+	 <!-- FBNEO 添加 FBNEO Plus 配置 -->
+	<system>
+        <name>fbneo</name>
+        <fullname>FinalBurn Neo</fullname>
+        <path>%ROMPATH%\fbneo</path>
+        <extension>.7z .7Z .zip .ZIP</extension>
+		<command label="FinalBurn Neo Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=fbneo_plus_libretro.so %EXTRA_ROM%=%ROM%</command>
+        <command label="FinalBurn Neo">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\fbneo_libretro.dll %ROM%</command>
+        <command label="FinalBurn Neo (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_FINALBURN-NEO% %BASENAME%</command>
+        <platform>arcade</platform>
+        <theme>fbneo</theme>
+    </system>
     <!-- 配合整合包 修改 so  -->
     <system>
         <name>pico8</name>
@@ -125,7 +136,7 @@
         <theme>pico8</theme>
     </system>
     <!-- Switch 添加多个前端启动版本 -->
-        <system>
+    <system>
         <name>switch</name>
         <fullname>Nintendo Switch</fullname>
         <path>%ROMPATH%/switch</path>
@@ -141,18 +152,51 @@
         <platform>switch</platform>
         <theme>switch</theme>
     </system>
-
+    <!-- window平台 -->
+    <system>
+        <name>windows</name>
+        <fullname>Microsoft Windows</fullname>
+        <path>%ROMPATH%/windows</path>
+        <extension>.desktop .shortcut</extension>
+        <!-- 大水杯备份 兼容支持会移除 -->
+        <command label="Winlator WB64 BigCup (Standalone)">%EMULATOR_WINLATOR-WB64-BIGCUP% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
+        <!-- 统一使用 EmulatorPlus 模块功能 只是包名不同 -->
+        <command label="Winlator (Standalone)">%EMULATOR_WINLATOR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
+        <command label="Winlator WB64 (Standalone)">%EMULATOR_WINLATOR-WB64% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
+        <command label="Winlator WB64 855 (Standalone)">%EMULATOR_WINLATOR-WB64-855% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
+        <command label="Winlator A (Standalone)">%EMULATOR_WINLATOR-A% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
+        <command label="Winlator B (Standalone)">%EMULATOR_WINLATOR-B% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
+        <command label="Winlator Antutu (Standalone)">%EMULATOR_WINLATOR-ANTUTU% %ACTIVIT %+jkACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <!-- cmod版 这是官方支持的 -->
+        <command label="Winlator Cmod Glibc (Standalone)">%EMULATOR_WINLATOR-GLIBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Cmod PRoot (Standalone)">%EMULATOR_WINLATOR-PROOT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <!-- Moonlight支持 -->
+        <command label="Moonlight (Standalone)">%EMULATOR_MOONLIGHT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
+        <command label="Moonlight Debug (Standalone)">%EMULATOR_MOONLIGHT-DEBUG% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
+        <platform>pcwindows</platform>
+        <theme>windows</theme>
+    </system>
+    <!-- Mugne -->
+    <system>
+        <name>mugen</name>
+        <fullname>M.U.G.E.N Game Engine</fullname>
+        <path>%ROMPATH%/mugen</path>
+        <extension>.mugen</extension>
+        <command label="GameDreamFactory (Standalone)">%EMULATOR_GAME-DREAM-FACTORY% %DATA%="GameDreamFactory: -open \"%ROM%\""</command>
+        <platform>mugen</platform>
+        <theme>mugen</theme>
+    </system>
+    <!-- psvita 支持 psm -->
     <system>
         <name>psvita</name>
         <fullname>Sony PlayStation Vita</fullname>
         <path>%ROMPATH%/psvita</path>
         <extension>.psvita</extension>
+		<command label="Vita3K (Standalone)">%EMULATOR_VITA3K% %EXTRAARRAY_AppStartParameters%=-r,%INJECT%=%BASENAME%.psvita</command>
         <command label="PlayStation Mobile (Standalone)">%EMULATOR_PLAYSTATION-MOBILE% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_titleId%=%INJECT%=%BASENAME%.psm</command>
-        <command label="Vita3K (Standalone)">%EMULATOR_VITA3K% %EXTRAARRAY_AppStartParameters%=-r,%INJECT%=%BASENAME%.psvita</command>
         <platform>psvita</platform>
         <theme>psvita</theme>
     </system>
-
 
     <!-- 个人使用 -->
     <!-- solarus 添加模拟器配置 -->
@@ -186,6 +230,16 @@
         <platform>mononcol</platform>
         <theme>mononcol</theme>
     </system>
+    <!-- psm平台 -->
+    <system>
+        <name>psm</name>
+        <fullname>PlayStation Mobile</fullname>
+        <path>%ROMPATH%/psm</path>
+        <extension>.psm</extension>
+        <command label="PlayStation Mobile (Standalone)">%EMULATOR_PLAYSTATION-MOBILE% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_titleId%=%INJECT%=%BASENAME%.psm</command>
+        <platform>psm</platform>
+        <theme>psm</theme>
+    </system>
     <!-- ons模拟器 将游戏文件夹改名成 XX.mine  -->
     <system>
         <name>ons</name>
@@ -196,38 +250,7 @@
         <platform>ons</platform>
         <theme>ons</theme>
     </system>
-    <system>
-        <name>windows</name>
-        <fullname>Microsoft Windows</fullname>
-        <path>%ROMPATH%/windows</path>
-        <extension>.desktop .shortcut</extension>
-        <!-- 大水杯备份 兼容支持会移除 -->
-        <command label="Winlator WB64 BigCup (Standalone)">%EMULATOR_WINLATOR-WB64-BIGCUP% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
-        <!-- 统一使用 EmulatorPlus 模块功能 只是包名不同 -->
-        <command label="Winlator (Standalone)">%EMULATOR_WINLATOR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator WB64 (Standalone)">%EMULATOR_WINLATOR-WB64% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator WB64 855 (Standalone)">%EMULATOR_WINLATOR-WB64-855% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator A (Standalone)">%EMULATOR_WINLATOR-A% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator B (Standalone)">%EMULATOR_WINLATOR-B% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator Antutu (Standalone)">%EMULATOR_WINLATOR-ANTUTU% %ACTIVIT %+jkACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
-        <!-- cmod版 这是官方支持的 -->
-        <command label="Winlator Cmod Glibc (Standalone)">%EMULATOR_WINLATOR-GLIBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
-        <command label="Winlator Cmod PRoot (Standalone)">%EMULATOR_WINLATOR-PROOT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
-        <!-- Moonlight支持 -->
-        <command label="Moonlight (Standalone)">%EMULATOR_MOONLIGHT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
-        <command label="Moonlight Debug (Standalone)">%EMULATOR_MOONLIGHT-DEBUG% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
-        <platform>pcwindows</platform>
-        <theme>windows</theme>
-    </system>
-    <system>
-        <name>psm</name>
-        <fullname>PlayStation Mobile</fullname>
-        <path>%ROMPATH%/psm</path>
-        <extension>.psm</extension>
-        <command label="PlayStation Mobile (Standalone)">%EMULATOR_PLAYSTATION-MOBILE% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_titleId%=%INJECT%=%BASENAME%.psm</command>
-        <platform>psm</platform>
-        <theme>psm</theme>
-    </system>
+    <!-- KRKR -->
     <system>
         <name>krkr</name>
         <fullname>KRKR</fullname>
@@ -237,7 +260,7 @@
         <platform>krkr</platform>
         <theme>krkr</theme>
     </system>
-
+    <!-- RPGMAKER -->
     <system>
         <name>rpgmaker</name>
         <fullname>RPG Maker</fullname>
@@ -249,16 +272,5 @@
         <platform>rpgmaker</platform>
         <theme>easyrpg</theme>
     </system>
-    <system>
-        <name>mugen</name>
-        <fullname>M.U.G.E.N Game Engine</fullname>
-        <path>%ROMPATH%/mugen</path>
-        <extension>.mugen</extension>
-        <!-- 暂时官方es不支持，需要es-de添加EmulatorPlus模块 -->
-        <command label="GameDreamFactory (Standalone)">%EMULATOR_GAME-DREAM-FACTORY% %DATA%="GameDreamFactory: -open \"%ROM%\""</command>
-        <platform>mugen</platform>
-        <theme>mugen</theme>
-    </system>
-
 
 </systemList>
