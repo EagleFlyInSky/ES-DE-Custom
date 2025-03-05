@@ -116,6 +116,12 @@
             <entry>ru.woesss.j2meloader/ru.playsoftware.j2meloader.config.ConfigActivity</entry>
         </rule>
     </emulator>
+    <emulator name="JOIPLAY-BIGCUP">
+        <!-- rpgmaker emulator JOIPLAY -->
+        <rule type="androidpackage">
+            <entry>cyou.joiplay.joiplay/.activities.ShortcutActivity</entry>
+        </rule>
+    </emulator>
     <emulator name="JOIPLAY">
         <!-- rpgmaker emulator JOIPLAY -->
         <rule type="androidpackage">
@@ -165,6 +171,11 @@
     <emulator name="WINLATOR">
         <rule type="androidpackage">
             <entry>com.winlator/com.winlator.MainActivity</entry>
+        </rule>
+    </emulator>
+    <emulator name="WINLATOR-WB64-BIGCUP">
+        <rule type="androidpackage">
+             <entry>com.wb64/com.winlator.GameStarterActivity</entry>
         </rule>
     </emulator>
     <emulator name="WINLATOR-WB64">

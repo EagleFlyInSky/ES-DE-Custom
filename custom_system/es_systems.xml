@@ -33,7 +33,12 @@
         <path>%ROMPATH%/psp</path>
         <extension>.chd .CHD .cso .CSO .elf .ELF .iso .ISO .pbp .PBP .prx .PRX .7z .7Z .zip .ZIP</extension>
         <command label="PPSSPP (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %DATA%=%ROMSAF%</command>
+        <!-- 暂时官方es不支持，需要es-de添加EmulatorPlus模块 -->
+        <command label="PPSSPP OpenGL (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/opengl.ini %ROMSAF%"</command>
+        <command label="PPSSPP Vulkan (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/vulkan.ini %ROMSAF%"</command>
         <command label="PPSSPP-GOLD (Standalone)">%EMULATOR_PPSSPP-GOLD% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %DATA%=%ROMSAF%</command>
+        <command label="PPSSPP-GOLD OpenGL (Standalone)">%EMULATOR_PPSSPP-GOLD% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/opengl.ini %ROMSAF%"</command>
+        <command label="PPSSPP-GOLD Vulkan (Standalone)">%EMULATOR_PPSSPP-GOLD% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/vulkan.ini %ROMSAF%"</command>
         <command label="PPSSPP">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=ppsspp_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <platform>psp</platform>
         <theme>psp</theme>
@@ -45,6 +50,9 @@
         <path>%ROMPATH%/easyrpg</path>
         <extension>.easyrpg .zip .ZIP .rpg .RPG .aop .AOP</extension>
         <command label="EasyRPG">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=easyrpg_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <!-- 大水杯备份 兼容支持会移除 -->
+        <command label="Joiplay Bigcup (Standalone)">%EMULATOR_JOIPLAY-BIGCUP% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_id%=%INJECT%=%BASENAME%.joiplay</command>
+        <!-- EmulatorPlus 模块功能 -->
         <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM% %EXTRA_title%=%BASENAME%</command>
         <command label="MaldiVes (Standalone)">%EMULATOR_MALDIVES% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <command label="AopAop (Standalone)">%EMULATOR_AOPAOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROM%</command>
@@ -57,6 +65,9 @@
         <fullname>Adobe Flash</fullname>
         <path>%ROMPATH%/flash</path>
         <extension>.swf .SWF .joiplay .JOIPLAY</extension>
+        <!-- 大水杯备份 兼容支持会移除 -->
+        <command label="Joiplay Bigcup (Standalone)">%EMULATOR_JOIPLAY-BIGCUP% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_id%=%INJECT%=%BASENAME%.joiplay</command>
+        <!-- EmulatorPlus 模块功能 -->
         <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM% %EXTRA_title%=%BASENAME%</command>
         <command label="Ruffle (Standalone)">%EMULATOR_RUFFLE% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <command label="SWF Player (Standalone)">%EMULATOR_SWF-PLAYER% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
@@ -190,13 +201,19 @@
         <fullname>Microsoft Windows</fullname>
         <path>%ROMPATH%/windows</path>
         <extension>.desktop .shortcut</extension>
+        <!-- 大水杯备份 兼容支持会移除 -->
+        <command label="Winlator WB64 BigCup (Standalone)">%EMULATOR_WINLATOR-WB64-BIGCUP% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
+        <!-- 统一使用 EmulatorPlus 模块功能 只是包名不同 -->
         <command label="Winlator (Standalone)">%EMULATOR_WINLATOR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
         <command label="Winlator WB64 (Standalone)">%EMULATOR_WINLATOR-WB64% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
         <command label="Winlator WB64 855 (Standalone)">%EMULATOR_WINLATOR-WB64-855% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
         <command label="Winlator A (Standalone)">%EMULATOR_WINLATOR-A% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
         <command label="Winlator B (Standalone)">%EMULATOR_WINLATOR-B% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
         <command label="Winlator Antutu (Standalone)">%EMULATOR_WINLATOR-ANTUTU% %ACTIVIT %+jkACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <!-- cmod版 这是官方支持的 -->
+        <command label="Winlator Cmod Glibc (Standalone)">%EMULATOR_WINLATOR-GLIBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
         <command label="Winlator Cmod PRoot (Standalone)">%EMULATOR_WINLATOR-PROOT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <!-- Moonlight支持 -->
         <command label="Moonlight (Standalone)">%EMULATOR_MOONLIGHT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
         <command label="Moonlight Debug (Standalone)">%EMULATOR_MOONLIGHT-DEBUG% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
         <platform>pcwindows</platform>
@@ -237,6 +254,7 @@
         <fullname>M.U.G.E.N Game Engine</fullname>
         <path>%ROMPATH%/mugen</path>
         <extension>.mugen</extension>
+        <!-- 暂时官方es不支持，需要es-de添加EmulatorPlus模块 -->
         <command label="GameDreamFactory (Standalone)">%EMULATOR_GAME-DREAM-FACTORY% %DATA%="GameDreamFactory: -open \"%ROM%\""</command>
         <platform>mugen</platform>
         <theme>mugen</theme>
