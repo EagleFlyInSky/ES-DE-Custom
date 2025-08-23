@@ -93,9 +93,15 @@
         </rule>
     </emulator>
     <emulator name="CITRON">
-        <!-- switch emulator uzuy -->
+        <!-- switch emulator Citron -->
         <rule type="androidpackage">
             <entry>org.citron.citron_emu/org.citron.citron_emu.activities.EmulationActivity</entry>
+        </rule>
+    </emulator>	
+    <emulator name="EDEN">
+        <!-- switch emulator Eden -->
+        <rule type="androidpackage">
+            <entry>dev.eden.eden_emulator/org.yuzu.yuzu_emu.activities.EmulationActivity</entry>
         </rule>
     </emulator>
     <emulator name="SOLARUS">
@@ -148,7 +154,7 @@
     </emulator>
     <emulator name="TYRANOR">
         <!-- emulator Tyranor -->
-        <rule type="androidpackage">*
+        <rule type="androidpackage">
             <entry>com.akira.tyranoemu/com.akira.tyranoemu.app.TyActivity</entry>
         </rule>
     </emulator>
@@ -167,45 +173,42 @@
             <entry>com.limelight.debug/com.limelight.ShortcutTrampoline</entry>
         </rule>
     </emulator>
+    <!-- Exagear -->
+    <emulator name="EXAGEAR">
+        <rule type="androidpackage">
+            <entry>com.ludashi.benchmark/com.ludashi.benchmark.activities.EDStartupActivity</entry>
+        </rule>
+    </emulator>
+    <!-- 云游戏 -->
+    <emulator name="CLOUD-GAME">
+        <rule type="androidpackage">
+            <entry>com.tdzy.cloudgame/.ui.activity.HandheldConsoleActivity</entry>
+        </rule>
+    </emulator>
     <!-- 原版包名 -->
     <emulator name="WINLATOR">
         <rule type="androidpackage">
             <entry>com.winlator/com.winlator.MainActivity</entry>
         </rule>
     </emulator>
-    <emulator name="WINLATOR-WB64-BIGCUP">
+    <emulator name="WINLATOR-CMOD">
         <rule type="androidpackage">
-             <entry>com.wb64/com.winlator.GameStarterActivity</entry>
+            <entry>com.winlator.cmod/.XServerDisplayActivity</entry>
         </rule>
     </emulator>
-    <emulator name="WINLATOR-WB64">
+    <emulator name="WINLATOR-BONIC-LUDASHI">
         <rule type="androidpackage">
-            <entry>com.WineBox64/com.winlator.MainActivity</entry>
-        </rule>
-    </emulator>
-    <emulator name="WINLATOR-WB64-855">
-        <rule type="androidpackage">
-            <entry>com.wb64/com.winlator.MainActivity</entry>
-        </rule>
-    </emulator>
-    <emulator name="WINLATOR-A">
-        <rule type="androidpackage">
-            <entry>com.winlatorA/com.winlator.MainActivity</entry>
-        </rule>
-    </emulator>
-    <emulator name="WINLATOR-B">
-        <rule type="androidpackage">
-            <entry>com.winlatorB/com.winlator.MainActivity</entry>
-        </rule>
-    </emulator>
-    <emulator name="WINLATOR-ANTUTU">
-        <rule type="androidpackage">
-            <entry>com.antutu.ABenchMark/com.winlator.MainActivity</entry>
+            <entry>com.ludashi.benchmark/.XServerDisplayActivity</entry>
         </rule>
     </emulator>
     <emulator name="GAME-DREAM-FACTORY">
         <rule type="androidpackage">
             <entry>com.GameDreamFactoryAndroid/com.GameDreamFactoryAndroid.activities.MainActivity</entry>
+        </rule>
+    </emulator>
+     <emulator name="APS3E">
+        <rule type="androidpackage">
+            <entry>aenu.aps3e/.EmulatorActivity</entry>
         </rule>
     </emulator>
     

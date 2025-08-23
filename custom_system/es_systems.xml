@@ -33,6 +33,7 @@
         <path>%ROMPATH%/psp</path>
         <extension>.chd .CHD .cso .CSO .elf .ELF .iso .ISO .pbp .PBP .prx .PRX .7z .7Z .zip .ZIP</extension>
         <command label="PPSSPP (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %DATA%=%ROMSAF%</command>
+        <!-- 暂时官方es不支持，需要es-de添加EmulatorPlus模块 -->
         <command label="PPSSPP OpenGL (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/opengl.ini %ROMSAF%"</command>
         <command label="PPSSPP Vulkan (Standalone)">%EMULATOR_PPSSPP% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %EXTRA_org.ppsspp.ppsspp.Args%="--appendconfig=/storage/emulated/0/PSP/vulkan.ini %ROMSAF%"</command>
         <command label="PPSSPP-GOLD (Standalone)">%EMULATOR_PPSSPP-GOLD% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %DATA%=%ROMSAF%</command>
@@ -42,32 +43,43 @@
         <platform>psp</platform>
         <theme>psp</theme>
     </system>
+    <!-- PS3支持 -->
+    <system>
+        <name>ps3</name>
+        <fullname>Sony PlayStation 3</fullname>
+        <path>%ROMPATH%/ps3</path>
+        <extension>.iso .ISO .ps3 .PS3</extension>
+        <command label="APS3E ISO (Standalone)">%EMULATOR_APS3E% %ACTION%=android.intent.action.VIEW %EXTRA_iso_uri%=%ROMSAF%</command>
+        <command label="APS3E DIR (Standalone)">%EMULATOR_APS3E% %ACTION%=android.intent.action.VIEW %EXTRA_game_dir%="/storage/emulated/0/Android/data/aenu.aps3e/files/aps3e/config/dev_hdd0/game/%INJECT%=%BASENAME%.ps3"</command>
+        <platform>ps3</platform>
+        <theme>ps3</theme>
+    </system>
     <!-- EasyRPG 添加 Joiplay支持 -->
     <system>
         <name>easyrpg</name>
         <fullname>EasyRPG Game Engine</fullname>
         <path>%ROMPATH%/easyrpg</path>
-        <extension>.easyrpg .zip .ZIP .rpg .RPG .aop .AOP</extension>
+        <extension>.easyrpg .zip .ZIP .rpg .RPG .aop .AOP .joi .JOI .joiplay</extension>
         <command label="EasyRPG">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=easyrpg_libretro_android.so %EXTRA_ROM%=%ROM%</command>
         <!-- 大水杯备份 兼容支持会移除 -->
         <command label="Joiplay Bigcup (Standalone)">%EMULATOR_JOIPLAY-BIGCUP% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_id%=%INJECT%=%BASENAME%.joiplay</command>
         <!-- EmulatorPlus 模块功能 -->
-        <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM% %EXTRA_title%=%BASENAME%</command>
+        <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP%  %EXTRA_shortcut_path%=%ROM%</command>
         <command label="MaldiVes (Standalone)">%EMULATOR_MALDIVES% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <command label="AopAop (Standalone)">%EMULATOR_AOPAOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROM%</command>
         <platform>easyrpg</platform>
         <theme>easyrpg</theme>
     </system>
-    <!-- Flash 添加 Joiplay支持 -->
+    <!-- Flash 添加 Joiplay支持 --> 
     <system>
         <name>flash</name>
         <fullname>Adobe Flash</fullname>
         <path>%ROMPATH%/flash</path>
-        <extension>.swf .SWF .joiplay .JOIPLAY</extension>
+        <extension>.swf .SWF .joiplay .JOIPLAY .joi .JOIPLAY</extension>
         <!-- 大水杯备份 兼容支持会移除 -->
         <command label="Joiplay Bigcup (Standalone)">%EMULATOR_JOIPLAY-BIGCUP% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_id%=%INJECT%=%BASENAME%.joiplay</command>
         <!-- EmulatorPlus 模块功能 -->
-        <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM% %EXTRA_title%=%BASENAME%</command>
+        <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
         <command label="Ruffle (Standalone)">%EMULATOR_RUFFLE% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <command label="SWF Player (Standalone)">%EMULATOR_SWF-PLAYER% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <platform>flash</platform>
@@ -115,13 +127,82 @@
 	<system>
         <name>fbneo</name>
         <fullname>FinalBurn Neo</fullname>
-        <path>%ROMPATH%\fbneo</path>
+        <path>%ROMPATH%/fbneo</path>
         <extension>.7z .7Z .zip .ZIP</extension>
 		<command label="FinalBurn Neo Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=fbneo_plus_libretro.so %EXTRA_ROM%=%ROM%</command>
-        <command label="FinalBurn Neo">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%\fbneo_libretro.dll %ROM%</command>
-        <command label="FinalBurn Neo (Standalone)">%STARTDIR%=%EMUDIR% %EMULATOR_FINALBURN-NEO% %BASENAME%</command>
         <platform>arcade</platform>
         <theme>fbneo</theme>
+    </system>
+	 <system>
+        <name>neogeo</name>
+        <fullname>SNK Neo Geo</fullname>
+        <path>%ROMPATH%/neogeo</path>
+        <extension>.neo .NEO .7z .7Z .zip .ZIP</extension>
+        <command label="FinalBurn Neo Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=fbneo_plus_libretro.so %EXTRA_ROM%=%ROM%</command>
+		<command label="FinalBurn Neo">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbneo_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="Geolith">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/geolith_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="NEO.emu (Standalone)">%EMULATOR_NEO-EMU% %DATA%=%ROMSAF%</command>
+        <command label="MAME4droid Current (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/neogeo'" %DATA%=%ROMPROVIDER%</command>
+        <command label="MAME4droid (Standalone)">%EMULATOR_MAME4DROID% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
+        <platform>neogeo</platform>
+        <theme>neogeo</theme>
+    </system>
+	 <system>
+        <name>cps1</name>
+        <fullname>Capcom Play System I</fullname>
+        <path>%ROMPATH%/cps1</path>
+        <extension>.7z .7Z .zip .ZIP</extension>
+        <command label="FinalBurn Neo Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=fbneo_plus_libretro.so %EXTRA_ROM%=%ROM%</command>
+		<command label="MAME - Current">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mamearcade_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2010">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2010_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2003-Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2003_plus_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2003">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2003_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2000">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2000_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME4droid Current (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/cps1'" %DATA%=%ROMPROVIDER%</command>
+        <command label="MAME4droid (Standalone)">%EMULATOR_MAME4DROID% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
+        <command label="FinalBurn Neo">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbneo_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="FB Alpha 2012">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbalpha2012_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="FB Alpha 2012 CPS-1">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbalpha2012_cps1_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <platform>arcade</platform>
+        <theme>cps1</theme>
+    </system>
+    <system>
+		<name>cps2</name>
+        <fullname>Capcom Play System II</fullname>
+        <path>%ROMPATH%/cps2</path>
+        <extension>.7z .7Z .zip .ZIP</extension>
+        <command label="FinalBurn Neo Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=fbneo_plus_libretro.so %EXTRA_ROM%=%ROM%</command>
+		<command label="MAME - Current">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mamearcade_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2010">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2010_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2003-Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2003_plus_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2003">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2003_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2000">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2000_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME4droid Current (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/cps2'" %DATA%=%ROMPROVIDER%</command>
+        <command label="MAME4droid (Standalone)">%EMULATOR_MAME4DROID% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
+        <command label="FinalBurn Neo">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbneo_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="FB Alpha 2012">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbalpha2012_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="FB Alpha 2012 CPS-2">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbalpha2012_cps2_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <platform>arcade</platform>
+        <theme>cps2</theme>
+    </system>
+    <system>
+        <name>cps3</name>
+        <fullname>Capcom Play System III</fullname>
+        <path>%ROMPATH%/cps3</path>
+        <extension>.7z .7Z .zip .ZIP</extension>
+        <command label="FinalBurn Neo Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=fbneo_plus_libretro.so %EXTRA_ROM%=%ROM%</command>
+		<command label="MAME - Current">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mamearcade_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2010">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2010_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2003-Plus">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2003_plus_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2003">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2003_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME 2000">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/mame2000_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="MAME4droid Current (Standalone)">%EMULATOR_MAME4DROID-CURRENT% %ACTION%=android.intent.action.VIEW %EXTRA_cli_params%="-rompath '%GAMEDIRRAW%;%ROMPATHRAW%/cps3'" %DATA%=%ROMPROVIDER%</command>
+        <command label="MAME4droid (Standalone)">%EMULATOR_MAME4DROID% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
+        <command label="FinalBurn Neo">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbneo_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="FB Alpha 2012">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbalpha2012_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <command label="FB Alpha 2012 CPS-3">%EMULATOR_RETROARCH% %EXTRA_CONFIGFILE%=/storage/emulated/0/Android/data/%ANDROIDPACKAGE%/files/retroarch.cfg %EXTRA_LIBRETRO%=/data/data/%ANDROIDPACKAGE%/cores/fbalpha2012_cps3_libretro_android.so %EXTRA_ROM%=%ROM%</command>
+        <platform>arcade</platform>
+        <theme>cps3</theme>
     </system>
     <!-- 配合整合包 修改 so  -->
     <system>
@@ -149,6 +230,7 @@
         <command label="suyu (Standalone)">%EMULATOR_SUYU% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
         <command label="Zinux (Standalone)">%EMULATOR_ZINUX% %ACTION%=android.nfc.action.TECH_DISCOVERED %DATA%=%ROMPROVIDER%</command>
         <command label="Skyline (Standalone)">%EMULATOR_SKYLINE% %ACTION%=android.intent.action.VIEW %DATA%=%ROMPROVIDER%</command>
+        <command label="Eden (Standalone)">%EMULATOR_EDEN% %ACTION%=android.nfc.action.TECH_DISCOVERED %DATA%=%ROMPROVIDER%</command>
         <platform>switch</platform>
         <theme>switch</theme>
     </system>
@@ -158,30 +240,55 @@
         <fullname>Microsoft Windows</fullname>
         <path>%ROMPATH%/windows</path>
         <extension>.desktop .shortcut</extension>
-        <!-- 大水杯备份 兼容支持会移除 -->
-        <command label="Winlator WB64 BigCup (Standalone)">%EMULATOR_WINLATOR-WB64-BIGCUP% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
         <!-- 统一使用 EmulatorPlus 模块功能 只是包名不同 -->
-        <command label="Winlator (Standalone)">%EMULATOR_WINLATOR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator WB64 (Standalone)">%EMULATOR_WINLATOR-WB64% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator WB64 855 (Standalone)">%EMULATOR_WINLATOR-WB64-855% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator A (Standalone)">%EMULATOR_WINLATOR-A% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator B (Standalone)">%EMULATOR_WINLATOR-B% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcutName%=%BASENAME%</command>
-        <command label="Winlator Antutu (Standalone)">%EMULATOR_WINLATOR-ANTUTU% %ACTIVIT %+jkACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator (Standalone)">%EMULATOR_WINLATOR% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <!-- Exagear -->
+        <command label="Exagear (Standalone)">%EMULATOR_EXAGEAR% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
+        <!-- 云游戏 -->
+        <command label="Winlator CloudGame (Standalone)">%EMULATOR_CLOUD-GAME% %ACTION%=android.intent.action.VIEW %CATEGORY%=android.intent.category.DEFAULT %DATA%=%ROMSAF%</command>
         <!-- cmod版 这是官方支持的 -->
+        <command label="Winlator Cmod (Standalone)">%EMULATOR_WINLATOR-CMOD% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
         <command label="Winlator Cmod Glibc (Standalone)">%EMULATOR_WINLATOR-GLIBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
         <command label="Winlator Cmod PRoot (Standalone)">%EMULATOR_WINLATOR-PROOT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Bionic Ludashi (Standalone)">%EMULATOR_WINLATOR-BONIC-LUDASHI% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
         <!-- Moonlight支持 -->
         <command label="Moonlight (Standalone)">%EMULATOR_MOONLIGHT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
         <command label="Moonlight Debug (Standalone)">%EMULATOR_MOONLIGHT-DEBUG% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
         <platform>pcwindows</platform>
         <theme>windows</theme>
     </system>
-    <!-- Mugne -->
+    <system>
+        <name>pcarcade</name>
+        <fullname>PC Arcade Systems</fullname>
+        <path>%ROMPATH%/pcarcade</path>
+        <extension>.desktop</extension>
+        <command label="Winlator Cmod (Standalone)">%EMULATOR_WINLATOR-CMOD% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Cmod Glibc (Standalone)">%EMULATOR_WINLATOR-GLIBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Cmod PRoot (Standalone)">%EMULATOR_WINLATOR-PROOT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Bionic Ludashi (Standalone)">%EMULATOR_WINLATOR-BONIC-LUDASHI% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <platform>arcade</platform>
+        <theme>pcarcade</theme>
+    </system>
+    <system>
+        <name>type-x</name>
+        <fullname>Taito Type X</fullname>
+        <path>%ROMPATH%/type-x</path>
+        <extension>.desktop</extension>
+        <command label="Winlator Cmod (Standalone)">%EMULATOR_WINLATOR-CMOD% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Cmod Glibc (Standalone)">%EMULATOR_WINLATOR-GLIBC% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Cmod PRoot (Standalone)">%EMULATOR_WINLATOR-PROOT% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <command label="Winlator Bionic Ludashi (Standalone)">%EMULATOR_WINLATOR-BONIC-LUDASHI% %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
+        <platform>arcade</platform>
+        <theme>type-x</theme>
+    </system>
+
+    <!-- Mugen -->
     <system>
         <name>mugen</name>
         <fullname>M.U.G.E.N Game Engine</fullname>
         <path>%ROMPATH%/mugen</path>
         <extension>.mugen</extension>
+        <!-- 暂时官方es不支持，需要es-de添加EmulatorPlus模块 -->
         <command label="GameDreamFactory (Standalone)">%EMULATOR_GAME-DREAM-FACTORY% %DATA%="GameDreamFactory: -open \"%ROM%\""</command>
         <platform>mugen</platform>
         <theme>mugen</theme>
@@ -260,13 +367,23 @@
         <platform>krkr</platform>
         <theme>krkr</theme>
     </system>
+    <!-- Tyranor -->
+    <system>
+        <name>tyranor</name>
+        <fullname>Tyranor</fullname>
+        <path>%ROMPATH%/tyranor</path>
+        <extension>.tyranor</extension>
+        <command label="Tyranor (Standalone)">%EMULATOR_TYRANOR% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM%</command>
+        <platform>tyranor</platform>
+        <theme>tyranor</theme>
+    </system>
     <!-- RPGMAKER -->
     <system>
         <name>rpgmaker</name>
         <fullname>RPG Maker</fullname>
         <path>%ROMPATH%/rpgmaker</path>
-        <extension>.rpg .RPG .aop .AOP</extension>
-        <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %DATA%=%ROM% %EXTRA_title%=%BASENAME%</command>
+        <extension>.rpg .RPG .aop .AOP .joi .JOI</extension>
+        <command label="Joiplay (Standalone)">%EMULATOR_JOIPLAY% %ACTION%=android.intent.action.MAIN %ACTIVITY_CLEAR_TASK% %ACTIVITY_CLEAR_TOP% %EXTRA_shortcut_path%=%ROM%</command>
         <command label="MaldiVes (Standalone)">%EMULATOR_MALDIVES% %ACTION%=android.intent.action.VIEW %DATA%=%ROMSAF%</command>
         <command label="AopAop (Standalone)">%EMULATOR_AOPAOP% %ACTION%=android.intent.action.VIEW %DATA%=%ROM%</command>
         <platform>rpgmaker</platform>

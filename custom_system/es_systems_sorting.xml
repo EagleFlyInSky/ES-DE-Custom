@@ -2,7 +2,15 @@
 <systemList>
     <system>
         <name>windows</name>
-        <systemsortname>00-000</systemsortname>
+        <systemsortname>00-100</systemsortname>
+    </system>
+    <system>
+        <name>pcarcade</name>
+        <systemsortname>00-101</systemsortname>
+    </system>
+    <system>
+        <name>type-x</name>
+        <systemsortname>00-102</systemsortname>
     </system>
     <!-- 手机 -->
     <system>
@@ -96,6 +104,10 @@
     <system>
         <name>ps2</name>
         <systemsortname>03-002</systemsortname>
+    </system>
+    <system>
+        <name>ps3</name>
+        <systemsortname>03-003</systemsortname>
     </system>
     <system>
         <name>psp</name>
@@ -240,6 +252,10 @@
 	<system>
         <name>easyrpg</name>
         <systemsortname>09-005</systemsortname>
+    </system>
+    <system>
+        <name>rpgmaker</name>
+        <systemsortname>09-006</systemsortname>
     </system>
 
     <system>
