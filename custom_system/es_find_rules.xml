@@ -176,7 +176,7 @@
     <!-- Exagear -->
     <emulator name="EXAGEAR">
         <rule type="androidpackage">
-            <entry>com.ludashi.benchmark/com.ludashi.benchmark.activities.EDStartupActivity</entry>
+            <entry>com.ludashi.benchmara/com.ludashi.benchmara.activities.EDStartupActivity</entry>
         </rule>
     </emulator>
     <!-- 云游戏 -->
